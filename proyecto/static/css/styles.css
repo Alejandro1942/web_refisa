@@ -5,12 +5,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Oswald, sans-serif;
     line-height: 1.6;
 }
 
 nav {
-    background-color: #333;
+    background-color: #0abe1f;
     color: white;
     padding: 15px;
     text-align: center;
@@ -35,7 +35,7 @@ nav ul li a:hover {
 }
 
 header {
-    background-image: url('Franna.jpeg'); /* Imagen de fondo */
+    background-image: url('Franna.jpeg'); 
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -86,7 +86,7 @@ section h2 {
 }
 
 footer {
-    background-color: #333;
+    background-color: #0abe1f;
     color: white;
     padding: 20px;
     text-align: center;

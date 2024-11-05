@@ -1,106 +1,78 @@
-<!DOCTYPE html> {% load static %}
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Refisa</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <!-- Navegación -->
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="{% url 'productos' %}">Productos</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#compramos">Compramos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+{% extends 'Aplicacion1/base.html' %}
 
-    <!-- Sección de Inicio -->
-    <header class="slideshow" id="inicio">
-        <div class="header-content">
-            <h1>Bienvenidos a Refisa</h1>
-            <p>Nos dedicamos a la compra y venta de materiales reciclables</p>
+{% block title %}Inicio - Refisa{% endblock %}
+
+{% block content %}
+<!-- Sección de Inicio -->
+<header class="slideshow" id="inicio">
+    <div class="header-content">
+        <h1>Bienvenidos a Refisa</h1>
+        <p>Nos dedicamos a la compra y venta de materiales reciclables</p>
+    </div>
+</header>
+
+<!-- Sección de Productos -->
+<section id="productos">
+    <h2>Productos Reciclables</h2>
+    <div class="productos">
+        <div class="producto-item">
+            <h3>Papel y Cartón</h3>
+            <p>Reciclamos papel y cartón de alta calidad para su reutilización.</p>
         </div>
-    </header>
-
-    <!-- Sección de Productos -->
-    <section id="productos">
-        <h2>Productos Reciclables</h2>
-        <div class="productos">
-            <div class="producto-item">
-                <h3>Papel y Cartón</h3>
-                <p>Reciclamos papel y cartón de alta calidad para su reutilización.</p>
-            </div>
-            <div class="producto-item">
-                <h3>Plástico</h3>
-                <p>Manejamos varios tipos de plástico para su reprocesamiento.</p>
-            </div>
-            <div class="producto-item">
-                <h3>Metales</h3>
-                <p>Se ofrece una solución sostenible y eficiente para la gestión de chatarra metálica</p>
-            </div>
+        <div class="producto-item">
+            <h3>Plástico</h3>
+            <p>Manejamos varios tipos de plástico para su reprocesamiento.</p>
         </div>
-    </section>
-
-    <!-- Sección de Servicios -->
-    <section id="servicios">
-        <h2>Servicios que Ofrecemos</h2>
-        <div class="servicios">
-            <div class="servicio-item">
-                <h3>Recolección</h3>
-                <p>Ofrecemos recolección de materiales reciclables directamente desde tu ubicación.</p>
-            </div>
-            <div class="servicio-item">
-                <h3>Procesamiento</h3>
-                <p>Procesamos materiales reciclables para su reutilización en nuevos productos.</p>
-            </div>
-            <div class="servicio-item">
-                <h3>Venta de Materiales Reciclados</h3>
-                <p>Proveemos materiales reciclados de alta calidad listos para ser reutilizados.</p>
-            </div>
+        <div class="producto-item">
+            <h3>Metales</h3>
+            <p>Se ofrece una solución sostenible y eficiente para la gestión de chatarra metálica.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Sección de Compramos -->
-    <section id="compramos">
-        <h2>Materiales que Compramos</h2>
-        <div class="compramos">
-            <div class="compramos-item">
-                <h3>Papel y Cartón</h3>
-                <p>Compramos papel y cartón en grandes cantidades para reciclar.</p>
-            </div>
-            <div class="compramos-item">
-                <h3>Plásticos</h3>
-                <p>Estamos interesados en varios tipos de plásticos como PET, HDPE, entre otros.</p>
-            </div>
-            <div class="compramos-item">
-                <h3>Metales</h3>
-                <p>Compramos metales reciclables como aluminio y cobre.</p>
-            </div>
+<!-- Sección de Servicios -->
+<section id="servicios">
+    <h2>Servicios que Ofrecemos</h2>
+    <div class="servicios">
+        <div class="servicio-item">
+            <h3>Recolección</h3>
+            <p>Ofrecemos recolección de materiales reciclables directamente desde tu ubicación.</p>
         </div>
-    </section>
+        <div class="servicio-item">
+            <h3>Procesamiento</h3>
+            <p>Procesamos materiales reciclables para su reutilización en nuevos productos.</p>
+        </div>
+        <div class="servicio-item">
+            <h3>Venta de Materiales Reciclados</h3>
+            <p>Proveemos materiales reciclados de alta calidad listos para ser reutilizados.</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Sección de Contacto -->
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <ul>
-            
-        </ul>
-    </section>
+<!-- Sección de Compramos -->
+<section id="compramos">
+    <h2>Materiales que Compramos</h2>
+    <div class="compramos">
+        <div class="compramos-item">
+            <h3>Papel y Cartón</h3>
+            <p>Compramos papel y cartón en grandes cantidades para reciclar.</p>
+        </div>
+        <div class="compramos-item">
+            <h3>Plásticos</h3>
+            <p>Estamos interesados en varios tipos de plásticos como PET, HDPE, entre otros.</p>
+        </div>
+        <div class="compramos-item">
+            <h3>Metales</h3>
+            <p>Compramos metales reciclables como aluminio y cobre.</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Para más información o para vender tus materiales reciclables, contáctanos:</p>
-        <ul>
-            <li>Teléfono: +52 961XXXXXXX</li>
-            <li>Email: contacto@refisa.com</li>
-            <li>Dirección: Calzada Emiliano Zapata, Colonia Lomas Bonitas Tuxtla Gutiérrez, Chiapas</li>
-        </ul>
-        <p>&copy; 2024 Refisa. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+<!-- Sección de Contacto -->
+<section id="contacto">
+    <h2>Contacto</h2>
+    <ul>
+        <!-- Detalles de contacto aquí -->
+    </ul>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>{% block title %}Refisa{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="{% static 'media/Refisa.mp4' %}" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        <div class="header-content">
+            <h1>Bienvenido a Refisa</h1>
+            <p>Texto de bienvenida o introducción.</p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="{% url 'productos' %}">Productos</a></li>
+            <li><a href="{% url 'servicios' %}">Servicios</a></li>
+            <li><a href="{% url 'compramos' %}">Compramos</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Bloque de contenido principal -->
+    {% block content %}
+    
+    {% endblock %}
+    
+    <footer>
+        <p>Para más información o para vender tus materiales reciclables, contáctanos:</p>
+        <ul>
+            <li>Teléfono: +52 961XXXXXXX</li>
+            <li>Email: contacto@refisa.com</li>
+            <li>Dirección: Calzada Emiliano Zapata, Colonia Lomas Bonitas Tuxtla Gutiérrez, Chiapas</li>
+        </ul>
+        <p>&copy; 2024 Refisa. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+    

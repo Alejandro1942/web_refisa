@@ -10,10 +10,27 @@ body {
 }
 
 nav {
-    background-color: #0abe1f;
-    color: white;
+    background-color: transparent; 
+    color: white; /* Color del texto */
     padding: 15px;
-    text-align: center;
+    text-align: right;
+    position: absolute; /* Permite que se posicione sobre el header */
+    top: 0; /* Alinea el nav en la parte superior del header */
+    left: 0; /* Alinea a la izquierda */
+    right: 0; /* Alinea a la derecha */
+    z-index: 10; /* Asegura que el nav esté sobre el header */
+}
+
+
+nav a {
+    color: white; 
+    text-decoration: none; 
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover {
+    transform: scale(1.2); 
 }
 
 nav ul {
@@ -34,31 +51,31 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-header {
+.header {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 2rem;
-    background-size: cover;
-    background-position: center;
-    animation: slideshow 15s infinite;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes slideshow {
-    0% {
-        background-image: url('/static/images/ref1.webp');
-    }
-    33% {
-        background-image: url('/static/images/ref2.webp');
-    }
-    66% {
-        background-image: url('/static/images/ref3.webp');
-    }
-    100% {
-        background-image: url('/static/images/ref4.webp');
-    }
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
 }
 
 
@@ -111,3 +128,69 @@ footer {
 footer p {
     margin: 0;
 }
+
+/*<------------Estilo de la sección servicios----------------*/
+
+.servicios-section {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    color: #333;
+    text-align: center;
+}
+
+.servicios-section h2 {
+    font-size: 2.5rem;
+    color: #0abe1f; /* Color de acento en los títulos */
+    margin-bottom: 20px;
+}
+
+.servicios-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.servicios-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    background-color: white;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-10px);
+}
+
+.servicio h3 {
+    font-size: 1.8rem;
+    color: #0abe1f;
+    margin-bottom: 15px;
+}
+
+.servicio p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .servicios-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio {
+        max-width: 100%;
+    }
+}
+

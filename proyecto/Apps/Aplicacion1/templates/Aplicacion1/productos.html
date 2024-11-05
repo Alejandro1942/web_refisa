@@ -1,11 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% extends 'Aplicacion1/base.html' %}
+
+{% block title %}Refisa-Productos{% endblock %}
+
+{% block content %}
 <body>
-    <h1>Hola</h1>
+    <header>
+        <h1>Productos Disponibles</h1>
+            <ul>
+                <li><a href="{% url 'productos' %}">Productos</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            </ul>
+    </header>
+
+    <main>
+        <section>
+            <h2>Nuestros Productos Reciclados</h2>
+            <p>Ofrecemos una variedad de materiales reciclables que han pasado por un proceso de maquilación para garantizar su calidad. A continuación, se muestran algunos de nuestros productos:</p>
+
+            <div class="productos-container">
+                {% for producto in productos %}
+                <div class="producto-item">
+                    <h3>{{ producto.nombre }}</h3>
+                    <p>Categoría: {{ producto.categoria }}</p>
+                    <p>Descripción: {{ producto.descripcion }}</p>
+                    <p>Precio: ${{ producto.precio }}</p>
+                    <button>Contactar para más información</button>
+                </div>
+                {% empty %}
+                <p>No hay productos disponibles en este momento.</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Recicladora. Todos los derechos reservados.</p>
+    </footer>
 </body>
-</html>
+{% endblock %}

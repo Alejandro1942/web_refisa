@@ -1,41 +1,47 @@
 {% extends 'Aplicacion1/base.html' %}
+{% load static %}
 
 {% block title %}Refisa-Productos{% endblock %}
 
 {% block content %}
-<body>
-    <header>
-        <h1>Productos Disponibles</h1>
-            <ul>
-                <li><a href="{% url 'productos' %}">Productos</a></li>
-                <li><a href="{% url 'contacto' %}">Contacto</a></li>
-            </ul>
-    </header>
-
-    <main>
-        <section>
-            <h2>Nuestros Productos Reciclados</h2>
-            <p>Ofrecemos una variedad de materiales reciclables que han pasado por un proceso de maquilación para garantizar su calidad. A continuación, se muestran algunos de nuestros productos:</p>
-
-            <div class="productos-container">
-                {% for producto in productos %}
-                <div class="producto-item">
-                    <h3>{{ producto.nombre }}</h3>
-                    <p>Categoría: {{ producto.categoria }}</p>
-                    <p>Descripción: {{ producto.descripcion }}</p>
-                    <p>Precio: ${{ producto.precio }}</p>
-                    <button>Contactar para más información</button>
-                </div>
-                {% empty %}
-                <p>No hay productos disponibles en este momento.</p>
-                {% endfor %}
-            </div>
-        </section>
-    </main>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2024 Recicladora. Todos los derechos reservados.</p>
-    </footer>
-</body>
+<section class="productos-section">
+    <h2>Productos Reciclados</h2>
+    <p>Estos son los materiales procesados que ofrecemos, compactados en pacas para facilitar su transporte y reutilización en nuevos procesos productivos.</p>
+    
+    <div class="productos">
+        <div class="producto">
+            <a href="{% url 'producto_detalle' 'plasticos_compactados' %}">
+                <h3>Plásticos Compactados</h3>
+                <img src="{% static 'images/petcompac.webp' %}" alt="Plásticos compactados en pacas">
+            </a>
+            <p>Plásticos procesados y compactados listos para su reutilización industrial.</p>
+        </div>
+        
+        <div class="producto">
+            <a href="{% url 'producto_detalle' 'carton_compactado' %}">
+                <h3>Cartón Compactado</h3>
+                <img src="{% static 'images/cartoncompac.jpg' %}" alt="Cartón compactado en pacas">
+            </a>
+            <p>Cartón procesado y compactado, ideal para la fabricación de nuevos productos.</p>
+        </div>
+        
+        <!-- Producto de Papel -->
+        <div class="producto">
+            <a href="{% url 'producto_detalle' 'papel_compactado' %}">
+                <h3>Papel Compactado</h3>
+                <img src="{% static 'images/papelcompac.jpg' %}" alt="Papel archivo compactado en pacas">
+            </a>
+            <p>Papel reciclado y compactado, perfecto para nuevos ciclos de producción.</p>
+        </div>
+        
+        <!-- Producto de Metales -->
+        <div class="producto">
+            <a href="{% url 'producto_detalle' 'metales_compactados' %}">
+                <h3>Metales Compactados</h3>
+                <img src="{% static 'images/metalcompac.jpg' %}" alt="Metales compactados en pacas">
+            </a>
+            <p>Metales reciclados y compactados, listos para fundición o reutilización.</p>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -1,3 +1,49 @@
 {% extends 'Aplicacion1/base.html' %}
+{% load static %}
 
 {% block title %}Compramos - Refisa{% endblock %}
+
+{% block content %}
+<section class="compramos-section">
+    <h2>Materiales que Compramos</h2>
+    <p>En Refisa, compramos y reciclamos una variedad de materiales. Selecciona una categoría para ver más detalles.</p>
+    
+    <div class="categorias">
+        <!-- Plásticos -->
+        <div class="categoria">
+            <a href="{% url 'categoria_detalle' 'plasticos' %}">
+                <h3>Plásticos</h3>
+                <img src="{% static 'images/plasticos.jpg' %}" alt="Plásticos reciclables">
+            </a>
+            <p>Reciclamos diferentes tipos de plásticos, incluyendo PET, HDPE y PVC.</p>
+        </div>
+        
+        <!-- Cartón -->
+        <div class="categoria">
+            <a href="{% url 'categoria_detalle' 'carton' %}">
+                <h3>Cartón</h3>
+                <img src="{% static 'images/carton.jpg' %}" alt="Cartón reciclable">
+            </a>
+            <p>Compramos cartón en distintas presentaciones, como cajas y embalajes.</p>
+        </div>
+        
+        <!-- Papel -->
+        <div class="categoria">
+            <a href="{% url 'categoria_detalle' 'papel' %}">
+                <h3>Papel</h3>
+                <img src="{% static 'images/papel.jpg' %}" alt="Papel reciclable">
+            </a>
+            <p>Aceptamos varios tipos de papel, como periódicos, papel blanco y revistas.</p>
+        </div>
+        
+        <!-- Metales -->
+        <div class="categoria">
+            <a href="{% url 'categoria_detalle' 'metales' %}">
+                <h3>Metales</h3>
+                <img src="{% static 'images/metales.jpg' %}" alt="Metales reciclables">
+            </a>
+            <p>Compramos metales como aluminio, cobre, acero y otros materiales metálicos.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

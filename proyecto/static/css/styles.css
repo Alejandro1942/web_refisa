@@ -194,3 +194,216 @@ footer p {
     }
 }
 
+/*-----------------Estilo para la sección Compramos----------------*/
+.compramos-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.compramos-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.compramos-section p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.categoria {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.categoria img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.categoria h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 15px;
+}
+
+.categoria p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+.categoria a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*------------------Estilo para la sección Productos ----------------------*/
+.productos-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.productos-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.productos-section p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.producto img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.producto h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 15px;
+}
+
+.producto p {
+    font-size: 1em;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+.producto a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*---------------------Estilo para la sección Nosotros ---------------*/
+.nosotros-section {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    color: #333;
+    text-align: center;
+}
+
+.nosotros-section h2 {
+    font-size: 2.5rem;
+    color: #0abe1f; /* Color de acento en los títulos */
+    margin-bottom: 20px;
+}
+
+.nosotros-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+/* Estilo para Misión, Visión y Valores */
+.nosotros-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nosotros-item {
+    background-color: white;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.nosotros-item:hover {
+    transform: translateY(-10px);
+}
+
+.nosotros-item h3 {
+    font-size: 1.8rem;
+    color: #0abe1f;
+    margin-bottom: 15px;
+}
+
+.nosotros-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nosotros-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nosotros-item {
+        max-width: 100%;
+    }
+}

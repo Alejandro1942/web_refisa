@@ -1,3 +1,33 @@
 {% extends 'Aplicacion1/base.html' %}
+{% load static %}
 
 {% block title %}Contacto - Refisa{% endblock %}
+
+{% block content %}
+<section class="contacto-section">
+    <h2>Contáctanos</h2>
+    <p>Para más información o para vender tus materiales reciclables, visítanos o contáctanos mediante los medios que aparecen a continuación.</p>
+
+    <div class="contacto-info">
+        <h3>Información de Contacto</h3>
+        <p><strong>Teléfono:</strong> +52 961XXXXXXX</p>
+        <p><strong>Teléfono Adicional:</strong> +52 961YYYYYYY</p>
+        <p><strong>Email:</strong> contacto@refisa.com</p>
+        <p><strong>Email Adicional:</strong> soporte@refisa.com</p>
+        <p><strong>Dirección:</strong> Calzada Emiliano Zapata, Colonia Lomas Bonitas, Tuxtla Gutiérrez, Chiapas</p>
+    </div>
+
+    <!-- Link a Google Maps -->
+    <p><a href="https://www.google.com/maps/@16.7397191,-93.1662509,18z?entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+        Ver en Google Maps
+    </a></p>
+</div>
+
+    <!-- Sección Cómo Llegar -->
+    <div class="como-llegar">
+        <h3>Cómo Llegar</h3>
+        <p>Encuentra nuestra ubicación exacta en el mapa para facilitar tu visita a nuestras instalaciones.</p>
+        <img src="{% static 'images/mapa.PNG' %}" alt="Mapa de ubicación de Refisa" class="mapa-imagen">
+    </div>
+</section>
+{% endblock %}

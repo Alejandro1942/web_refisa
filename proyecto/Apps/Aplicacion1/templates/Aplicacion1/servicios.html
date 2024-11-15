@@ -10,12 +10,12 @@
         
         <div class="servicios-list">
             <div class="servicio">
-                <h3>Flete para Compradores</h3>
+                <h3>Servicio de recolección a centro de acopio</h3>
                 <p>¿Necesitas materiales reciclables para tu industria? Nosotros te ayudamos a transportarlos hasta tu ubicación. Nuestro servicio de flete asegura un traslado seguro y confiable de los materiales reciclables que compras en Refisa.</p>
             </div>
             
             <div class="servicio">
-                <h3>Flete para Vendedores</h3>
+                <h3>Servicio de recolección</h3>
                 <p>¿Tienes materiales reciclables para vender? Facilitamos el proceso recogiendo tus materiales donde los tengas, llevándolos a nuestra planta para su evaluación y procesamiento. Obtén una opción rápida y conveniente para vender tus materiales con nosotros.</p>
             </div>
             
@@ -25,5 +25,48 @@
             </div>
         </div>
     </div>
+
+    <div class="servicio-formulario">
+        <h3>Solicitar Servicio de Recolección</h3>
+        <form id="recoleccionForm">
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="Escribe tu correo">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="Escribe tu teléfono">
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad de material (kg):</label>
+                <input type="number" id="cantidad" name="cantidad" required min="0" placeholder="Cantidad en kilogramos">
+            </div>
+            <div id="mensaje-error" class="mensaje-error"></div>
+            <button type="submit" class="btn">Solicitar Servicio</button>
+        </form>
+    </div>
 </section>
+
+<script>
+    document.getElementById("recoleccionForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Evitar el envío del formulario por defecto
+
+        const cantidad = document.getElementById("cantidad").value;
+        const mensajeError = document.getElementById("mensaje-error");
+
+        if (cantidad < 500) {
+            mensajeError.style.display = "block";
+            mensajeError.textContent = "Lo sentimos, el servicio solo está disponible para materiales mayores a 500 kg.";
+        } else {
+            mensajeError.style.display = "none";
+            alert("Gracias por tu solicitud. Nos pondremos en contacto contigo pronto.");
+            // Aquí puedes manejar el envío del formulario, como hacer un fetch a una API o redirigir a otra página
+        }
+    });
+</script>
+
 {% endblock %}

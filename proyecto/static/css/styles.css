@@ -194,6 +194,59 @@ footer p {
     }
 }
 
+.servicio-formulario {
+    background-color: white;
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.servicio-formulario h3 {
+    font-size: 1.8rem;
+    color: #0abe1f;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.mensaje-error {
+    color: red;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.btn {
+    background-color: #0abe1f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #087d13;
+}
+
 /*-----------------Estilo para la sección Compramos----------------*/
 .compramos-section {
     padding: 50px 20px;
@@ -407,3 +460,77 @@ footer p {
         max-width: 100%;
     }
 }
+
+/* ------------------------Estilos para la sección de Contacto -----------------------------------*/
+.contacto-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.contacto-section h2 {
+    font-size: 2.5rem;
+    color: #0abe1f;
+    margin-bottom: 20px;
+}
+
+.contacto-info {
+    margin-bottom: 40px;
+}
+
+.contacto-info h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contacto-info p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Estilos para la sección Cómo Llegar */
+.como-llegar {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.como-llegar h3 {
+    font-size: 1.8rem;
+    color: #0abe1f;
+    margin-bottom: 15px;
+}
+
+.como-llegar p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.mapa-imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contacto-section h2 {
+        font-size: 2rem;
+    }
+    .contacto-info p, .como-llegar p {
+        font-size: 1rem;
+    }
+    .como-llegar {
+        padding: 20px;
+    }
+}
+

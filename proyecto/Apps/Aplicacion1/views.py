@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 
 # Estas son las rutas de los archivos que componen el navegador
 def index(request):
@@ -27,3 +32,29 @@ def categoria_detalle(request, categoria):
 
 def producto_detalle(request, producto):
     return render(request, 'producto_detalle.html', {'producto': producto})
+
+#Bloque para que reciba los datos del formulario, valide la cantidad y envíe el correo electrónico.
+@csrf_exempt
+def procesar_formulario(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        cantidad = int(data.get("cantidad", 0))
+
+        if cantidad < 500:
+            return JsonResponse({
+                "success": False,
+                "message": "Lo sentimos, el servicio solo está disponible para materiales mayores a 500 kg."
+            })
+
+        # Enviar correo electrónico
+        send_mail(
+            subject="Nueva solicitud de recolección",
+            message=f"Se ha recibido una nueva solicitud de recolección de {cantidad} kg.",
+            from_email="overdrive1942@gmail.com",
+            recipient_list=["overdrive1942@gmail.com"],
+        )
+
+        return JsonResponse({
+            "success": True,
+            "message": "Gracias por tu solicitud. Nos pondremos en contacto contigo pronto."
+        })

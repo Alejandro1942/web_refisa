@@ -12,16 +12,15 @@
     <header class="header">
         <video autoplay loop muted playsinline class="background-video">
             <source src="{% static 'media/Refisa.mp4' %}" type="video/mp4">
-            Tu navegador no soporta la etiqueta de video.
         </video>
         <div class="header-content">
             <h1>Bienvenido a Refisa</h1>
-            <p>Texto de bienvenida o introducción.</p>
+            <p>Compra y venta de materiales reciclables</p>
         </div>
     </header>
     <nav>
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
             <li><a href="{% url 'productos' %}">Materiales</a></li>
             <li><a href="{% url 'servicios' %}">Servicios</a></li>
             <li><a href="{% url 'compramos' %}">Compramos</a></li>

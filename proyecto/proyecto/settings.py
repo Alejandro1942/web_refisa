@@ -106,3 +106,15 @@ MEDIA_URL='images/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Configuración para el proveedor de correos
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Host de Gmail
+EMAIL_PORT = 587  # Puerto estándar para TLS
+EMAIL_USE_TLS = True  # Usa TLS para cifrar la conexión
+EMAIL_USE_SSL = False  # No se necesita SSL si usas TLS
+EMAIL_HOST_USER = 'overdrive1942@gmail.com'  # Tu dirección de correo
+EMAIL_HOST_PASSWORD = 'tywr mtxe xchl ivjd'  # Contraseña o token de aplicación (recomendado para Gmail)
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Dirección que aparecerá como remitente
+

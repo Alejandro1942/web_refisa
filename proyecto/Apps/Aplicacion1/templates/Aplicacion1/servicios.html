@@ -50,23 +50,42 @@
         </form>
     </div>
 </section>
+<form id="recoleccionForm">
+    {% csrf_token %}
+    <input type="number" id="cantidad" name="cantidad" required>
+    <div id="mensaje-error" style="display:none; color:red;"></div>
+    <button type="submit">Enviar</button>
+</form>
+
 
 <script>
     document.getElementById("recoleccionForm").addEventListener("submit", function (e) {
-        e.preventDefault(); // Evitar el envío del formulario por defecto
-
+        e.preventDefault();
+    
         const cantidad = document.getElementById("cantidad").value;
         const mensajeError = document.getElementById("mensaje-error");
-
-        if (cantidad < 500) {
-            mensajeError.style.display = "block";
-            mensajeError.textContent = "Lo sentimos, el servicio solo está disponible para materiales mayores a 500 kg.";
-        } else {
-            mensajeError.style.display = "none";
-            alert("Gracias por tu solicitud. Nos pondremos en contacto contigo pronto.");
-            // Aquí puedes manejar el envío del formulario, como hacer un fetch a una API o redirigir a otra página
-        }
+    
+        fetch("/procesar-formulario/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value // Si usas CSRF
+            },
+            body: JSON.stringify({ cantidad: cantidad })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) {
+                mensajeError.style.display = "block";
+                mensajeError.textContent = data.message;
+            } else {
+                mensajeError.style.display = "none";
+                alert(data.message);
+            }
+        })
+        .catch(error => console.error("Error:", error));
     });
+    
 </script>
 
 {% endblock %}
